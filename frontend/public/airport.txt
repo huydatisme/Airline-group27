@@ -1,0 +1,43 @@
+Ha Noi
+London
+Paris
+Dubai
+New York City
+Los Angeles
+Tokyo
+Singapore
+Hong Kong
+Frankfurt
+Amsterdam
+Sydney
+Toronto
+Istanbul
+Seoul
+Rome
+Madrid
+Moscow
+Bangkok
+Mumbai
+Sao Paulo
+Johannesburg
+Mexico City
+Shanghai
+Beijing
+Kuala Lumpur
+Doha
+Cairo
+Buenos Aires
+Chicago
+Atlanta
+Dallas
+Denver
+Miami
+San Francisco
+Seattle
+Munich
+Zurich
+Dublin
+Stockholm
+Copenhagen
+Da Nang
+Ho Chi Minh City

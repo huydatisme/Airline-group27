@@ -1,0 +1,61 @@
+-- Tạo database
+CREATE DATABASE flyquest ENCODING = 'UTF8' LOCALE_PROVIDER = 'libc' LOCALE = 'English_United States.1252';
+
+\c flyquest;
+
+-- Tạo bảng account
+CREATE TABLE public.account (
+    account_id VARCHAR(255) PRIMARY KEY,
+    account_name VARCHAR(255),
+    account_password VARCHAR(255),
+    account_email VARCHAR(255),
+    account_role VARCHAR(255)
+);
+
+-- Tạo bảng airline
+CREATE TABLE public.airline (
+    airlineid VARCHAR(255) PRIMARY KEY,
+    name VARCHAR(255),
+    airlinecode VARCHAR(30)
+);
+
+-- Tạo bảng airport
+CREATE TABLE public.airport (
+    airportid VARCHAR(255) PRIMARY KEY,
+    location VARCHAR(255),
+    name VARCHAR(255),
+    airportcode VARCHAR(3),
+    country VARCHAR(30)
+);
+
+-- Tạo bảng flight
+CREATE TABLE public.flight (
+    flightid VARCHAR(255) PRIMARY KEY,
+    airlineid VARCHAR(255),
+    flightnumber VARCHAR(255),
+    departureid VARCHAR(255),
+    destinationid VARCHAR(255),
+    availableeconomyseat INTEGER,
+    price INTEGER,
+    departuretime TIMESTAMP WITHOUT TIME ZONE,
+    expectedarrival TIMESTAMP WITHOUT TIME ZONE,
+    availablebusinessseat INTEGER,
+    availablefirstclassseat INTEGER,
+    CONSTRAINT fk_flight_airline FOREIGN KEY (airlineid) REFERENCES public.airline(airlineid),
+    CONSTRAINT fk_flight_departure_airport FOREIGN KEY (departureid) REFERENCES public.airport(airportid),
+    CONSTRAINT fk_flight_destination_airport FOREIGN KEY (destinationid) REFERENCES public.airport(airportid)
+);
+
+-- Tạo bảng tickethistory
+CREATE TABLE public.tickethistory (
+    flightid VARCHAR(255),
+    accountid VARCHAR(255),
+    datebooked DATE,
+    state INTEGER,
+    PRIMARY KEY (flightid, accountid),
+    CONSTRAINT fk_tickethistory_flight FOREIGN KEY (flightid) REFERENCES public.flight(flightid),
+    CONSTRAINT fk_tickethistory_account FOREIGN KEY (accountid) REFERENCES public.account(account_id)
+);
+
+-- Kết thúc
+

@@ -1,0 +1,234 @@
+{
+    "customer": {
+      "view_flight_info": {
+        "method": "GET",
+        "url": "/api/flights",
+        "description": "Xem thông tin chung và chi tiết về các chuyến bay.",
+        "query_params": {
+          "departure": "string (optional)",
+          "destination": "string (optional)",
+          "date": "date (optional)"
+        },
+        "response": {
+          "flights": [
+            {
+              "id": "number",
+              "airline": "string",
+              "source": "string",
+              "destination": "string",
+              "departure": "string",
+              "arrival": "string",
+              "duration": "string",
+              "cost": "number"
+            }
+          ]
+        }
+      },
+      "search_flight": {
+        "method": "GET",
+        "url": "/api/flights/search",
+        "description": "Tìm kiếm chuyến bay theo các tiêu chí.",
+        "query_params": {
+          "departure": "string",
+          "destination": "string",
+          "date": "date"
+        },
+        "response": {
+          "flights": [
+            {
+              "id": "number",
+              "airline": "string",
+              "source": "string",
+              "destination": "string",
+              "departure": "string",
+              "arrival": "string",
+              "duration": "string",
+              "cost": "number"
+            }
+          ]
+        }
+      },
+      "book_ticket": {
+        "method": "POST",
+        "url": "/api/tickets",
+        "description": "Đặt vé chuyến bay.",
+        "body": {
+          "flight_id": "number",
+          "passengers": [
+            {
+              "name": "string",
+              "email": "string",
+              "phone": "string"
+            }
+          ]
+        },
+        "response": {
+          "confirmationKey": "string",
+          "airline": "string",
+          "source": "string",
+          "destination": "string",
+          "departure": "string",
+          "arrival": "string",
+          "duration": "string",
+          "cost": "number",
+          "passengers": [
+            {
+              "name": "string",
+              "email": "string",
+              "phone": "string"
+            }
+          ]
+        }
+      },
+      "cancel_ticket": {
+        "method": "DELETE",
+        "url": "/api/tickets/{confirmationKey}",
+        "description": "Hủy vé trong thời gian cho phép.",
+        "response": {
+          "message": "string"
+        }
+      },
+      "track_ticket": {
+        "method": "GET",
+        "url": "/api/tickets/{confirmationKey}",
+        "description": "Theo dõi thông tin về các chuyến bay đã đặt.",
+        "response": {
+          "confirmationKey": "string",
+          "airline": "string",
+          "source": "string",
+          "destination": "string",
+          "departure": "string",
+          "arrival": "string",
+          "duration": "string",
+          "cost": "number",
+          "passengers": [
+            {
+              "name": "string",
+              "email": "string",
+              "phone": "string"
+            }
+          ]
+        }
+      }
+    },
+    "admin": {
+      "add_flight": {
+        "method": "POST",
+        "url": "/api/admin/flights",
+        "description": "Thêm dữ liệu chuyến bay.",
+        "body": {
+          "airline": "string",
+          "source": "string",
+          "destination": "string",
+          "departure": "string",
+          "arrival": "string",
+          "duration": "string",
+          "cost": "number"
+        },
+        "response": {
+          "flight_id": "number",
+          "message": "string"
+        }
+      },
+      "update_flight": {
+        "method": "PUT",
+        "url": "/api/admin/flights/{flight_id}",
+        "description": "Cập nhật thông tin chuyến bay.",
+        "body": {
+          "departure": "string (optional)",
+          "arrival": "string (optional)",
+          "duration": "string (optional)",
+          "cost": "number (optional)",
+          "status": "string (optional)"
+        },
+        "response": {
+          "message": "string"
+        }
+      },
+      "add_airplane": {
+        "method": "POST",
+        "url": "/api/admin/airplanes",
+        "description": "Nhập dữ liệu về tàu bay.",
+        "body": {
+          "airplane_id": "string",
+          "manufacturer": "string",
+          "model": "string",
+          "seat_capacity": "number"
+        },
+        "response": {
+          "message": "string"
+        }
+      },
+      "view_statistics": {
+        "method": "GET",
+        "url": "/api/admin/statistics",
+        "description": "Xem và thống kê đặt vé của khách hàng.",
+        "response": {
+          "statistics": {
+            "total_tickets": "number",
+            "total_revenue": "number",
+            "popular_routes": [
+              {
+                "source": "string",
+                "destination": "string",
+                "ticket_count": "number"
+              }
+            ]
+          }
+        }
+      },
+      "delay_flight": {
+        "method": "PUT",
+        "url": "/api/admin/flights/{flight_id}/delay",
+        "description": "Thay đổi giờ khởi hành của chuyến bay.",
+        "body": {
+          "new_departure_time": "string"
+        },
+        "response": {
+          "message": "string"
+        }
+      }
+    },
+    "database": {
+      "users": {
+        "columns": {
+          "id": "integer, primary key, auto increment",
+          "name": "string",
+          "email": "string, unique",
+          "password": "string",
+          "role": "enum ('user', 'admin')"
+        }
+      },
+      "flights": {
+        "columns": {
+          "id": "integer, primary key, auto increment",
+          "airline": "string",
+          "source": "string",
+          "destination": "string",
+          "departure": "datetime",
+          "arrival": "datetime",
+          "duration": "string",
+          "cost": "float"
+        }
+      },
+      "tickets": {
+        "columns": {
+          "id": "integer, primary key, auto increment",
+          "confirmation_key": "string, unique",
+          "flight_id": "integer, foreign key to flights(id)",
+          "user_id": "integer, foreign key to users(id)",
+          "cost": "float"
+        }
+      },
+      "passengers": {
+        "columns": {
+          "id": "integer, primary key, auto increment",
+          "ticket_id": "integer, foreign key to tickets(id)",
+          "name": "string",
+          "email": "string",
+          "phone": "string"
+        }
+      }
+    }
+  }
+  

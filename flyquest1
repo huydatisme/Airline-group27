@@ -1,0 +1,138 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 16.3
+-- Dumped by pg_dump version 16.3
+
+-- Started on 2024-12-17 15:48:59
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- TOC entry 4861 (class 0 OID 106564)
+-- Dependencies: 215
+-- Data for Name: account; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.account VALUES ('2caae675796647a59e8521c422ba74c7', 'duc', '$2a$10$MT2p17rI9.XZ.a0Rk/nzdOgN9wf96kVRUISz1Hy8pb.wo8CJdsy3K', 'duc@gmail.com', 'ADMIN');
+INSERT INTO public.account VALUES ('07c3394dc0af4b24a920524b0a081fd3', 'dat', '$2a$10$DhjlL0PKzsHmwInph.YomO3WKMeXSZ7f8N0DnW.zDZO00HYRlixXi', 'dat@gmail.com', 'USER');
+
+
+--
+-- TOC entry 4863 (class 0 OID 114817)
+-- Dependencies: 217
+-- Data for Name: airline; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.airline VALUES ('dfd9c5f772f4438da1918651b91ce2e6', 'Vietnam Airline', 'VN');
+INSERT INTO public.airline VALUES ('a70ad39fe3e84840a23e67a85cf93589', 'Emirates', 'EK');
+INSERT INTO public.airline VALUES ('8489019c600a411fbd630abae711f22e', 'Singapore Airlines', 'SQ');
+INSERT INTO public.airline VALUES ('c8e4f1541cbc4e39a1168ec82770df79', 'Qatar Airways', 'QR');
+INSERT INTO public.airline VALUES ('1d4bcc669f2240c99f4472eaa4c4c690', 'British Airways', 'BA');
+INSERT INTO public.airline VALUES ('c5e1c368c6e443fda1320240ea1d72e1', 'Lufthansa', 'LH');
+INSERT INTO public.airline VALUES ('408d866eae0646b892a47b597ba1eac7', 'Air France', 'AF');
+INSERT INTO public.airline VALUES ('8b8cd44da3ae43458a4fa09fa2f395b0', 'Delta Air Lines', 'DL');
+INSERT INTO public.airline VALUES ('120d19189beb43cbaffb9c43cfe26ec1', 'United Airlines', 'UA');
+INSERT INTO public.airline VALUES ('9efd030e5c9141c6b865d046d63f6e9e', 'American Airlines', 'AA');
+INSERT INTO public.airline VALUES ('da79d88f428c44709a496ad579d60639', 'Southwest Airlines', 'WN');
+
+
+--
+-- TOC entry 4865 (class 0 OID 114831)
+-- Dependencies: 219
+-- Data for Name: airport; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.airport VALUES ('919da20d10314a43997514034ecf05c6', 'Ha Noi', 'Noi Bai International Airport', 'HAN', 'Vietnam');
+INSERT INTO public.airport VALUES ('6310189245a8484089e985ed23f690c4', 'London', 'Heathrow Airport', 'LHR', 'United Kingdom');
+INSERT INTO public.airport VALUES ('b1c1b5e9a4f1450282d1de5d9fbec834', 'Paris', 'Charles de Gaulle Airport', 'CDG', 'France');
+INSERT INTO public.airport VALUES ('09d8e5db31814ef8adbe750b570e26ba', 'Dubai', 'Dubai International Airport', 'DXB', 'United Arab Emirates');
+INSERT INTO public.airport VALUES ('c1ce60a39f7c4939820cedfe77d7b6bd', 'New York City', 'John F. Kennedy International Airport', 'JFK', 'United States');
+INSERT INTO public.airport VALUES ('6a8ba8d68b9441edbdb7458877f98417', 'Los Angeles', 'Los Angeles International Airport', 'LAX', 'United States');
+INSERT INTO public.airport VALUES ('beb79dd36005463c909e6008e7550ca5', 'Tokyo', 'Narita International Airport', 'NRT', 'Japan');
+INSERT INTO public.airport VALUES ('9ceefdb0b55241699fb5c86d67a12ff2', 'Singapore', 'Singapore Changi Airport', 'SIN', 'Singapore');
+INSERT INTO public.airport VALUES ('4991c7cfe9c845a69aa1eb2e10fa8f56', 'Hong Kong', 'Hong Kong International Airport', 'HKG', 'Hong Kong');
+INSERT INTO public.airport VALUES ('9bf70e4b323f4c2998e9bcc23f7599b9', 'Frankfurt', 'Frankfurt Airport', 'FRA', 'Germany');
+INSERT INTO public.airport VALUES ('7ec6289801ff4b7abf5aadec4ed93259', 'Amsterdam', 'Amsterdam Schiphol Airport', 'AMS', 'Netherlands');
+INSERT INTO public.airport VALUES ('5b3ccfbb488f45a78b3e1325415702ad', 'Sydney', 'Sydney Airport', 'SYD', 'Australia');
+INSERT INTO public.airport VALUES ('33fb8575521e458fb1c1eee51c94b2ce', 'Toronto', 'Toronto Pearson International Airport', 'YYZ', 'Canada');
+INSERT INTO public.airport VALUES ('e47b3e80d67d4897bf5cd8538a4808eb', 'Istanbul', 'Istanbul Airport', 'IST', 'Turkey');
+INSERT INTO public.airport VALUES ('07e6736253704764a4719996c1c0238a', 'Seoul', 'Incheon International Airport', 'ICN', 'South Korea');
+INSERT INTO public.airport VALUES ('aac8f6284f9b4f0381fea6ff277bd3a5', 'Rome', 'Leonardo da Vinci–Fiumicino Airport', 'FCO', 'Italy');
+INSERT INTO public.airport VALUES ('7f87d8b92e34468082c0891e0409abaa', 'Madrid', 'Adolfo Suárez Madrid–Barajas Airport', 'MAD', 'Spain');
+INSERT INTO public.airport VALUES ('dd44a70fcff44339aca7779dd4db3412', 'Moscow', 'Sheremetyevo International Airport', 'SVO', 'Russia');
+INSERT INTO public.airport VALUES ('355fc44eebcc44b6930e6f4873e7e7ac', 'Bangkok', 'Suvarnabhumi Airport', 'BKK', 'Thailand');
+INSERT INTO public.airport VALUES ('3d1f6dd98fa2413f8defb42ce37c2e16', 'Mumbai', 'Chhatrapati Shivaji Maharaj International Airport', 'BOM', 'India');
+INSERT INTO public.airport VALUES ('81df15c087e044a79b647bd44e8aa978', 'Sao Paulo', 'São Paulo–Guarulhos International Airport', 'GRU', 'Brazil');
+INSERT INTO public.airport VALUES ('91f25cb908b34af7913818669bce6ae6', 'Johannesburg', 'O. R. Tambo International Airport', 'JNB', 'South Africa');
+INSERT INTO public.airport VALUES ('8689c2ab297044ac8286660fd9a358e9', 'Mexico City', 'Mexico City International Airport', 'MEX', 'Mexico');
+INSERT INTO public.airport VALUES ('1429a2284ecb4877b1dae9062018bbc4', 'Shanghai', 'Shanghai Pudong International Airport', 'PVG', 'China');
+INSERT INTO public.airport VALUES ('124748fc81d84e65bcf3b2cf4c341921', 'Beijing', 'Beijing Capital International Airport', 'PEK', 'China');
+INSERT INTO public.airport VALUES ('607b7bbbcee24c2aa1f8c55e9e175ba8', 'Kuala Lumpur', 'Kuala Lumpur International Airport', 'KUL', 'Malaysia');
+INSERT INTO public.airport VALUES ('094b334e171842cca0a3e0e380b54bb7', 'Doha', 'Hamad International Airport', 'DOH', 'Qatar');
+INSERT INTO public.airport VALUES ('ceae586e32f644ac92d76d94b9bb283b', 'Cairo', 'Cairo International Airport', 'CAI', 'Egypt');
+INSERT INTO public.airport VALUES ('2f9cc635bd8e44a68bfd9ce237f62cb7', 'Buenos Aires', 'Ezeiza International Airport', 'EZE', 'Argentina');
+INSERT INTO public.airport VALUES ('1665b21396db4d63a2124810fa686a70', 'Chicago', 'O''Hare International Airport', 'ORD', 'United States');
+INSERT INTO public.airport VALUES ('39ea379f3bc34ae58771c5d9e4d5e0d0', 'Atlanta', 'Hartsfield-Jackson Atlanta International Airport', 'ATL', 'United States');
+INSERT INTO public.airport VALUES ('ca7b2b40b5a2455cbe682ee8b552ca78', 'Dallas', 'Dallas/Fort Worth International Airport', 'DFW', 'United States');
+INSERT INTO public.airport VALUES ('fde52fed315c4cee88808f4d0b1a2e7c', 'Denver', 'Denver International Airport', 'DEN', 'United States');
+INSERT INTO public.airport VALUES ('2e98d8793dae4d1b99a6153481d729d5', 'Miami', 'Miami International Airport', 'MIA', 'United States');
+INSERT INTO public.airport VALUES ('540878db2872423a9b23c51c2763feb4', 'San Francisco', 'San Francisco International Airport', 'SFO', 'United States');
+INSERT INTO public.airport VALUES ('f2238a32ce2d403cbc68fd7ea8843d8e', 'Seattle', 'Seattle-Tacoma International Airport', 'SEA', 'United States');
+INSERT INTO public.airport VALUES ('1bca7ba0244449b6bb4cf07872636efc', 'Munich', 'Munich Airport', 'MUC', 'Germany');
+INSERT INTO public.airport VALUES ('822773a5f082412b804c66816a209c80', 'Zurich', 'Zurich Airport', 'ZRH', 'Switzerland');
+INSERT INTO public.airport VALUES ('1d35c5dbe01545d4b242e4389ba168b6', 'Dublin', 'Dublin Airport', 'DUB', 'Ireland');
+INSERT INTO public.airport VALUES ('4a69f6eb2b6745eeb18f86afa32e6d50', 'Stockholm', 'Stockholm Arlanda Airport', 'ARN', 'Sweden');
+INSERT INTO public.airport VALUES ('c5d72b74ea4a49b18c40028ee84ab78d', 'Copenhagen', 'Copenhagen Airport', 'CPH', 'Denmark');
+INSERT INTO public.airport VALUES ('3dccb208b53c4c6aaa83952f0c261fb4', 'Da Nang', 'Da Nang International Airport', 'DAD', 'Vietnam');
+INSERT INTO public.airport VALUES ('836b38b4bb0d431f94ef8eecba607f73', 'Ho Chi Minh City', 'Tan Son Nhat International Airport', 'SGN', 'Vietnam');
+INSERT INTO public.airport VALUES ('688db73470134dd2abc964d0d639bef7', 'Nha Trang', 'Cam Ranh International Airport', 'CXR', 'Vietnam');
+INSERT INTO public.airport VALUES ('e43c13eb177547f880ee101ceb5dc523', 'Hue', 'Phu Bai International Airport', 'HUI', 'Vietnam');
+INSERT INTO public.airport VALUES ('8eacde1471024461b82aa2c78196208b', 'Hai Phong', 'Cat Bi International Airport', 'HPH', 'Vietnam');
+INSERT INTO public.airport VALUES ('1f7c1019bff9483183872f3c3e665912', 'Buon Ma Thuot', 'Buon Ma Thuot Airport', 'BMV', 'Vietnam');
+INSERT INTO public.airport VALUES ('d59b1db5f3014071bcfa5a01ecde6088', 'Da Lat', 'Lien Khuong Airport', 'DLI', 'Vietnam');
+INSERT INTO public.airport VALUES ('b25870dcd40c427a8c6d85506426453a', 'Pleiku', 'Pleiku Airport', 'PLU', 'Vietnam');
+INSERT INTO public.airport VALUES ('2074bcfea0b14de49f555dba59322ef2', 'Phu Quoc', 'Phu Quoc International Airport', 'PQC', 'Vietnam');
+INSERT INTO public.airport VALUES ('5415d1bdb630411c8531c277faeda77e', 'Can Tho', 'Can Tho International Airport', 'VCA', 'Vietnam');
+INSERT INTO public.airport VALUES ('4d712565311349b388607fad32ae99d2', 'Rach Gia', 'Rach Gia Airport', 'VKG', 'Vietnam');
+INSERT INTO public.airport VALUES ('25b86737a88b441baecc6a9721cae5fe', 'Qui Nhon', 'Phu Cat Airport', 'UIH', 'Vietnam');
+INSERT INTO public.airport VALUES ('302139499155459a85ea1d30be048331', 'Dong Hoi', 'Dong Hoi Airport', 'VDH', 'Vietnam');
+INSERT INTO public.airport VALUES ('797c497f55b74adaae72249d34c95a14', 'Vinh', 'Vinh Airport', 'VII', 'Vietnam');
+INSERT INTO public.airport VALUES ('28caa007aa8844fc90eb19206443d35f', 'Con Dao', 'Con Dao Airport', 'CDO', 'Vietnam');
+INSERT INTO public.airport VALUES ('032f1c6140fb44b6b29ecfc85889b664', 'Dien Bien Phu', 'Dien Bien Phu Airport', 'DIN', 'Vietnam');
+INSERT INTO public.airport VALUES ('61099086725c476d8262fe75b428b39f', 'Buon Ma Thuot', 'Buon Ma Thuot Airport', 'BMV', 'Vietnam');
+
+
+--
+-- TOC entry 4864 (class 0 OID 114824)
+-- Dependencies: 218
+-- Data for Name: flight; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.flight VALUES ('590c001031694253ace6acf94e406bc8', 'dfd9c5f772f4438da1918651b91ce2e6', 'VN127', '919da20d10314a43997514034ecf05c6', '836b38b4bb0d431f94ef8eecba607f73', 150, 130, '2024-12-25 00:00:00', '2024-12-25 02:00:00', 30, 6);
+
+
+--
+-- TOC entry 4862 (class 0 OID 114810)
+-- Dependencies: 216
+-- Data for Name: tickethistory; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+-- Completed on 2024-12-17 15:48:59
+
+--
+-- PostgreSQL database dump complete
+--
+
